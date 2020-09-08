@@ -29,7 +29,7 @@ pipeline {
 				sh	"python3 -m venv venv"
 				sh	". venv/bin/activate"
 				sh "pip3 install -r requirements.txt"
-				sh "pip3 install pylint"
+				sh "pip3 install pylint -y"
 				// sh "python3 --version"
 				echo " running stage"
 				// sh " shell script"
