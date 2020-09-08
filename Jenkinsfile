@@ -24,7 +24,7 @@ pipeline {
 				// sh "jenkins  ALL= NOPASSWD: ALL"
 				sh "sudo apt-get update -y"
 				sh "sudo apt-get install python3 -y"
-				sh	"sudo apt-get install python3-pip3 -y"
+				sh	"sudo apt-get install python3-pip -y"
 				sh	"pip3 install virtualenv"
 				sh	"python3 -m venv venv"
 				sh	"venv/Scripts/activate"
