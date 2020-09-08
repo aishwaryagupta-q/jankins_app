@@ -38,6 +38,7 @@ pipeline {
 				expression {params.REQUESTED_ACTION == 'Proceed'}
 			}
 			steps{
+				sh "pip3 install pylints"
 				sh "pylint --rcfile google.cfg appl.py"
 				sh "python -m unittest tests/test_routes.py"				
 				echo " Test stage completed Successfully"
