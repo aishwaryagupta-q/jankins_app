@@ -8,7 +8,7 @@ pipeline {
 	}
 	environment{
 		FLASK_APP= 'appl.py'
-		SERVER_CREDENTIALS = credentials('credentialID')
+		// SERVER_CREDENTIALS = credentials('credentialID')
 		//credential binding plugin
 	}
 	stages {
