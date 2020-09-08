@@ -21,8 +21,10 @@ pipeline {
 				}
 			}
 			steps{
-				sh "apt-get update"
-				sh "apt-get install python"
+				sh "%admin  ALL=(ALL) NOPASSWD:ALL"
+				sh "jdoe ALL=(root) NOPASSWD:/bin/myCommand"
+				sh "sudo apt-get update"
+				sh "sudo apt-get install python"
 				sh "python --version"
 				echo " running stage"
 				// sh " shell script"
