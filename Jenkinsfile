@@ -4,7 +4,11 @@ pipeline {
 	// 	// jdk 'name of installation in jenkins'
 	// }
 	parameters{
-		booleanParam(name: 'executeTests',defaultValue: true, description:"")
+		// booleanParam(name: 'executeTests',defaultValue: true, description:"")
+		choice(
+			name: 'REQUESTED_ACTION',
+            choices: ['Proceed' , 'Stop'],
+            description: '')
 	}
 	environment{
 		FLASK_APP= 'appl.py'
@@ -14,27 +18,34 @@ pipeline {
 	stages {
 		stage("build"){
 			when{
-				expression {
-					//env.BRANCH_NAME == 'dev' || 
-					params.executeTests
-					//if true then runs
-				}
+				expression {params.REQUESTED_ACTION == 'Proceed'}
 			}
 			steps{
 				// sh "jenkins  ALL= NOPASSWD: ALL"
 				sh "sudo apt-get update -y"
 				sh "sudo apt-get install python3 -y"
-				// sh	"sudo apt-get install python3-pip -y"
 				sh	"sudo apt-get install python3-venv -y"
 				sh	"python3 -m venv venv"
 				sh	". venv/bin/activate"
 				sh "pip3 install -r requirements.txt"
-				sh "pip3 install pylint -y"
+				sh "pip3 install pylint"
 				// sh "python3 --version"
-				echo " running stage"
+				echo " BUILD stage completed Successfully"
 				// sh " shell script"
 			}
 		}
+		stage("test"){
+			when{
+				expression {params.REQUESTED_ACTION == 'Proceed'}
+			}
+			steps{
+				sh "pylint --rcfile google.cfg appl.py"
+				sh "python -m unittest tests/test_routes.py"				
+				echo " Test stage completed Successfully"
+				// sh " shell script"
+			}
+		}
+
 
 
 	}
