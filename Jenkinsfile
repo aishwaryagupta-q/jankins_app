@@ -29,7 +29,7 @@ pipeline {
 				sh	". venv/bin/activate"
 				sh "pip3 install -r requirements.txt --user"
 				// sh "sudo easy_install pip"
-				sh "apt-get install -y pylint"
+				sh "sudo apt-get install -y pylint"
 				// sh "export PATH=$HOME/.local/bin:$PATH"
 				// sh "python3 --version"
 				echo " BUILD stage completed Successfully"
