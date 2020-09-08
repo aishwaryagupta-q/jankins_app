@@ -34,7 +34,7 @@ pipeline {
 				// sh "export PATH=$HOME/.local/bin:$PATH"
 				// sh "python3 --version"
 				echo " BUILD stage completed Successfully"
-				// sh " shell script"
+		
 			}
 		}
 		stage("test"){
