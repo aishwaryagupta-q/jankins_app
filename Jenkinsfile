@@ -43,7 +43,7 @@ pipeline {
 				expression {params.REQUESTED_ACTION == 'Proceed'}
 			}
 			steps{
-				sh "pylint --rcfile google.cfg --reports=n --disable=deprecated-module appl.py || python pylint_exit.py "
+				sh "pylint --rcfile google.cfg --reports=n --disable=deprecated-module appl.py || return 0 "
 				sh "python3 -m unittest tests/test_routes.py"				
 				echo " Test stage completed Successfully"
 				// sh " shell script"
