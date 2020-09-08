@@ -1,8 +1,8 @@
 pipeline {
 	agent any
-	tools {
-		// jdk 'name of installation in jenkins'
-	}
+	// tools {
+	// 	// jdk 'name of installation in jenkins'
+	// }
 	parameters{
 		booleanParam(name: 'executeTests',defaultValue: true, description:"")
 	}
