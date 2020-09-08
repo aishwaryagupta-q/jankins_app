@@ -31,6 +31,7 @@ pipeline {
 				// sh "sudo easy_install pip"
 				sh "sudo apt-get install -y pylint"
 				sh "pip3 install pylint-exit"
+				//  change
 				// sh "export PATH=$HOME/.local/bin:$PATH"
 				// sh "python3 --version"
 				echo " BUILD stage completed Successfully"
