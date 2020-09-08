@@ -41,7 +41,7 @@ pipeline {
 				expression {params.REQUESTED_ACTION == 'Proceed'}
 			}
 			steps{
-				sh "pylint --exit-zero --rcfile google.cfg appl.py"
+				sh "pylint --rcfile google.cfg appl.py"
 				sh "python3 -m unittest tests/test_routes.py"				
 				echo " Test stage completed Successfully"
 				// sh " shell script"
