@@ -30,7 +30,6 @@ pipeline {
 				sh "pip3 install -r requirements.txt --user"
 				// sh "sudo easy_install pip"
 				sh "sudo apt-get install -y pylint"
-				sh "pip3 install pylint-exit"
 				//  change
 				// sh "export PATH=$HOME/.local/bin:$PATH"
 				// sh "python3 --version"
@@ -49,6 +48,18 @@ pipeline {
 				// sh " shell script"
 			}
 		}
+		stage("deploy"){
+			when{
+				expression {params.REQUESTED_ACTION == 'Proceed'}
+			}
+			steps{
+				// sh "startup_script.sh"
+				// sh "gcloud compute scp "			
+				echo " Test stage completed Successfully"
+				// sh " shell script"
+			}
+		}
+
 
 
 
@@ -57,6 +68,7 @@ pipeline {
 		always{
 			// always executed
 			echo " always post"
+			junit 'test-reports/*.xml'
 			deleteDir()
 		}
 		success {

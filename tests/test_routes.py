@@ -21,6 +21,9 @@ class FlaskTest(unittest.TestCase):
 		self.assertEqual(response.content_type,"application/json")
 
 if __name__ == "__main__":
+	import xmlrunner
+    runner = xmlrunner.XMLTestRunner(output='test-reports')
+    unittest.main(testRunner=runner)
 	unittest.main()
 
 

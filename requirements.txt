@@ -8,6 +8,6 @@ more-itertools==8.5.0
 py==1.9.0
 pylint==2.6.0
 Werkzeug==0.13
-
+xmlrunner
 gunicorn==19.5.0
 gevent==20.6.2

@@ -16,7 +16,7 @@ source venv/bin/activate
 
 pip3 install flask
 python -m pip install --upgrade pip
-pip3 install -r requirements.txt
+pip3 install --user -r requirements.txt
 pip3 install pylint
 pip3 install pytest
 
