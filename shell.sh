@@ -6,7 +6,8 @@ jenkins    ALL = NOPASSWD: ALL
 sudo apt-get install python3
 sudo apt-get install python3-pip
 
-pip3 install virtualenv
+# pip3 install virtualenv
+sudo apt-get install python3-venv
 python3 -m venv venv
 venv/Scripts/activate
 
