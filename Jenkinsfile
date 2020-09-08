@@ -27,9 +27,9 @@ pipeline {
 				sh	"sudo apt-get install python3-venv -y"
 				sh	"python3 -m venv venv"
 				sh	". venv/bin/activate"
-				sh "pip3 install --user -r requirements.txt"
+				sh "pip3 install -r requirements.txt --user"
 				// sh "sudo easy_install pip"
-				sh "pip3 install --user pylint"
+				// sh "pip3 install --user pylint"
 				sh "export PATH=$HOME/.local/bin:$PATH"
 				// sh "python3 --version"
 				echo " BUILD stage completed Successfully"
@@ -41,7 +41,7 @@ pipeline {
 				expression {params.REQUESTED_ACTION == 'Proceed'}
 			}
 			steps{
-				sh "pylint --rcfile google.cfg appl.py"
+				// sh "pylint --rcfile google.cfg appl.py"
 				sh "python -m unittest tests/test_routes.py"				
 				echo " Test stage completed Successfully"
 				// sh " shell script"
