@@ -22,8 +22,8 @@ pipeline {
 			}
 			steps{
 				// sh "jenkins  ALL= NOPASSWD: ALL"
-				// sh "sudo yum update"
-				sh "sudo apt-get install python"
+				sh "sudo apt-get update -y"
+				sh "sudo apt-get install python -y"
 				sh "python --version"
 				echo " running stage"
 				// sh " shell script"
