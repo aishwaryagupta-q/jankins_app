@@ -23,8 +23,12 @@ pipeline {
 			steps{
 				// sh "jenkins  ALL= NOPASSWD: ALL"
 				sh "sudo apt-get update -y"
-				sh "sudo apt-get install python -y"
-				sh "python --version"
+				sh "sudo apt-get install python3 -y"
+				sh	"sudo apt-get install python3-pip3 -y"
+				sh	"pip3 install virtualenv"
+				sh	"python3 -m venv venv"
+				sh	"venv/Scripts/activate"
+				sh "python3 --version"
 				echo " running stage"
 				// sh " shell script"
 			}
