@@ -30,6 +30,7 @@ pipeline {
 				sh "pip3 install -r requirements.txt --user"
 				// sh "sudo easy_install pip"
 				sh "sudo apt-get install -y pylint"
+				sh "pip3 install pylint-exit"
 				// sh "export PATH=$HOME/.local/bin:$PATH"
 				// sh "python3 --version"
 				echo " BUILD stage completed Successfully"
@@ -41,7 +42,7 @@ pipeline {
 				expression {params.REQUESTED_ACTION == 'Proceed'}
 			}
 			steps{
-				sh "pylint --rcfile google.cfg appl.py"
+				sh "pylint --rcfile google.cfg --reports=n --disable=deprecated-module appl.py || python pylint_exit.py $?"
 				sh "python3 -m unittest tests/test_routes.py"				
 				echo " Test stage completed Successfully"
 				// sh " shell script"
