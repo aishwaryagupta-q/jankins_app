@@ -9,7 +9,10 @@ sudo apt-get install python3-pip
 # pip3 install virtualenv
 sudo apt-get install python3-venv
 python3 -m venv venv
+# windows
 venv/Scripts/activate
+# ubuntu
+venv/bin/activate
 
 pip3 install flask
 python -m pip install --upgrade pip
