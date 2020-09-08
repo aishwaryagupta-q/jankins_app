@@ -30,7 +30,6 @@ pipeline {
 				sh "pip3 install -r requirements.txt --user"
 				// sh "sudo easy_install pip"
 				sh "pip3 install pylint --user"
-				sh "where pylint"
 				// sh "export PATH=$HOME/.local/bin:$PATH"
 				// sh "python3 --version"
 				echo " BUILD stage completed Successfully"
@@ -42,7 +41,7 @@ pipeline {
 				expression {params.REQUESTED_ACTION == 'Proceed'}
 			}
 			steps{
-				sh "pylint --rcfile google.cfg appl.py"
+				// sh "pylint --rcfile google.cfg appl.py"
 				sh "python3 -m unittest tests/test_routes.py"				
 				echo " Test stage completed Successfully"
 				// sh " shell script"
