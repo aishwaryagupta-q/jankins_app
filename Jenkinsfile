@@ -1,13 +1,13 @@
 pipeline {
 	agent any
 	tools {
-		jdk 'name of installation in jenkins'
+		// jdk 'name of installation in jenkins'
 	}
 	parameters{
 		booleanParam(name: 'executeTests',defaultValue: true, description:"")
 	}
 	environment{
-		FLASK_APP= appl.py
+		FLASK_APP= 'appl.py'
 		SERVER_CREDENTIALS = credentials('credentialID')
 		//credential binding plugin
 	}
