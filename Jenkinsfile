@@ -28,7 +28,8 @@ pipeline {
 				sh	"sudo apt-get install python3-venv -y"
 				sh	"python3 -m venv venv"
 				sh	". venv/bin/activate"
-				sh "python3 --version"
+				sh "pip install -r requirements.txt"
+				// sh "python3 --version"
 				echo " running stage"
 				// sh " shell script"
 			}
