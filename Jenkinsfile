@@ -32,6 +32,7 @@ pipeline {
 		always{
 			// always executed
 			echo " always post"
+			deleteDir()
 		}
 		success {
 			echo "success post"
