@@ -23,13 +23,14 @@ pipeline {
 			steps{
 				// sh "jenkins  ALL= NOPASSWD: ALL"
 				sh "sudo apt-get update -y"
-				sh "sudo apt-get install python -y"
-				sh	"sudo apt-get install python-venv -y"
-				sh	"python -m venv venv"
+				sh "sudo apt-get install python3 -y"
+				sh	"sudo apt-get install python3-venv -y"
+				sh	"python3 -m venv venv"
 				sh	". venv/bin/activate"
-				sh "pip install -r requirements.txt --user"
+				sh "pip3 install -r requirements.txt --user"
 				// sh "sudo easy_install pip"
-				sh "pip install pylint --user"
+				sh "pip3 install pylint --user"
+				sh "where pylint"
 				// sh "export PATH=$HOME/.local/bin:$PATH"
 				// sh "python3 --version"
 				echo " BUILD stage completed Successfully"
@@ -42,7 +43,7 @@ pipeline {
 			}
 			steps{
 				sh "pylint --rcfile google.cfg appl.py"
-				sh "python -m unittest tests/test_routes.py"				
+				sh "python3 -m unittest tests/test_routes.py"				
 				echo " Test stage completed Successfully"
 				// sh " shell script"
 			}
