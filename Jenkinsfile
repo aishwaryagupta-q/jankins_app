@@ -25,7 +25,7 @@ pipeline {
 				sh "sudo apt-get update -y"
 				sh "sudo apt-get install python3 -y"
 				// sh	"sudo apt-get install python3-pip -y"
-				sh	"sudo apt-get install python3-venv"
+				sh	"sudo apt-get install python3-venv -y"
 				sh	"python3 -m venv venv"
 				sh	"venv/Scripts/activate"
 				sh "python3 --version"
