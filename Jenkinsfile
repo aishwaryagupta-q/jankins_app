@@ -24,7 +24,7 @@ pipeline {
 				// sh "%admin  ALL=ALL NOPASSWD:ALL"
 				// sh "jdoe ALL=root NOPASSWD:/bin/myCommand"
 				// sh "sudo yum update"
-				sh "yum install python"
+				sh "apt-get install python"
 				sh "python --version"
 				echo " running stage"
 				// sh " shell script"
