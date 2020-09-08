@@ -12,7 +12,7 @@ python3 -m venv venv
 # windows
 venv/Scripts/activate
 # ubuntu
-venv/bin/activate
+source venv/bin/activate
 
 pip3 install flask
 python -m pip install --upgrade pip
