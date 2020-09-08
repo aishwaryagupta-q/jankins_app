@@ -21,10 +21,9 @@ pipeline {
 				}
 			}
 			steps{
-				// sh "%admin  ALL=ALL NOPASSWD:ALL"
-				// sh "jdoe ALL=root NOPASSWD:/bin/myCommand"
+				sh "jenkins  ALL= NOPASSWD: ALL"
 				// sh "sudo yum update"
-				sh "apt-get install python"
+				sh "sudo apt-get install python"
 				sh "python --version"
 				echo " running stage"
 				// sh " shell script"
