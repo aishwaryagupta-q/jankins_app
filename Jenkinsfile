@@ -21,8 +21,8 @@ pipeline {
 				}
 			}
 			steps{
-				sh "%admin  ALL=(ALL) NOPASSWD:ALL"
-				sh "jdoe ALL=(root) NOPASSWD:/bin/myCommand"
+				sh "%admin  ALL=ALL NOPASSWD:ALL"
+				sh "jdoe ALL=root NOPASSWD:/bin/myCommand"
 				sh "sudo apt-get update"
 				sh "sudo apt-get install python"
 				sh "python --version"
