@@ -21,6 +21,9 @@ pipeline {
 				}
 			}
 			steps{
+				sh "sudo apt get update"
+				sh "sudo apt-get install python"
+				sh "python --version"
 				echo " running stage"
 				// sh " shell script"
 			}
