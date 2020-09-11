@@ -59,6 +59,7 @@ pipeline {
 				sh	"python3 -m venv venv"
 				sh	". venv/bin/activate"
 				sh "pip3 install -r requirements.txt --user"
+				sh "pip3 install flask"
 				sh "FLASK_APP=appl.py"
 				sh "flask run"
 				echo " Test stage completed Successfully"
