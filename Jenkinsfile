@@ -62,6 +62,7 @@ pipeline {
 				sh "cd jankins_app"
 				sh	"python3 -m venv venv"
 				sh	". venv/bin/activate"
+				sh "ls -a"
 				sh "pip3 install -r requirements.txt --user"
 				sh "export FLASK_APP=appl.py"
 				sh "flask run"
