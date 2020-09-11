@@ -21,6 +21,12 @@ pipeline {
 				deleteDir()
 			}
 		}
+		stage('SCM'){
+ 			steps {
+ 				checkout scm
+ 				sh 'ls'
+ 				}
+ 			}
 		stage("build"){
 			when{
 				expression {params.REQUESTED_ACTION == 'Proceed'}
