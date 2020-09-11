@@ -63,7 +63,7 @@ pipeline {
 						#!/bin/bash
 						ls -a
 						cd ./jankins_app
-						echo "this is $(pwd)
+						echo "this is $(pwd)"
 						ls -a
 						'''
 				sh "pip3 install -r requirements.txt --user"
