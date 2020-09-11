@@ -76,7 +76,7 @@ pipeline {
 						cd ./jankins_app
 						echo "this is $(pwd)"
 						ls -a
-						/bin/pip3 install -r requirements.txt --user
+						pip3 install -r requirements.txt --user
 						/bin/python3 appl.py &
 						'''
 				
