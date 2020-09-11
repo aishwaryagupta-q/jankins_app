@@ -11,3 +11,4 @@ Werkzeug==0.16.1
 xmlrunner
 gunicorn==19.5.0
 gevent==20.6.2
+pip3
