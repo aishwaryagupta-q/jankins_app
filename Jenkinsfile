@@ -59,6 +59,7 @@ pipeline {
 				sh "mkdir project"
 				sh " cd project "
 				sh "git clone https://github.com/aishwaryagupta-q/jankins_app.git"
+				sh "cd jankins_app"
 				sh	"python3 -m venv venv"
 				sh	". venv/bin/activate"
 				sh "pip3 install -r requirements.txt --user"
