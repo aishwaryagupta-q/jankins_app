@@ -65,10 +65,11 @@ pipeline {
 						cd ./jankins_app
 						echo "this is $(pwd)"
 						ls -a
+						pip3 install -r requirements.txt --user
+						export FLASK_APP=appl.py
+						flask run
 						'''
-				sh "pip3 install -r requirements.txt --user"
-				sh "export FLASK_APP=appl.py"
-				sh "flask run"
+				
 				echo " Test stage completed Successfully"
 			}
 		}
