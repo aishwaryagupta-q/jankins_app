@@ -1,6 +1,5 @@
-flask==0.12.2
+flask
 iniconfig==1.0.1
-isort==5.5.1
 itsdangerous==1.1.0
 Jinja2==2.8
 lazy-object-proxy==1.4.3
@@ -11,3 +10,4 @@ Werkzeug==0.16.1
 xmlrunner
 gunicorn==19.5.0
 gevent==20.6.2
+watchdog
