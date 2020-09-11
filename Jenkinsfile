@@ -74,10 +74,10 @@ pipeline {
 						cd ./jankins_app
 						echo "this is $(pwd)"
 						ls -a
-						/bin/python3 -m venv venv
+						python3 -m venv venv
 						. venv/bin/activate
-						/bin/pip3 install -r requirements.txt --user
-						/bin/python3 appl.py &
+						pip3 install -r requirements.txt --user
+						python3 appl.py &
 						'''
 				
 				echo " Test stage completed Successfully"
