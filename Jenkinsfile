@@ -53,10 +53,9 @@ pipeline {
 				expression {params.REQUESTED_ACTION == 'Proceed'}
 			}
 			steps{
-				// sh "startup_script.sh"
-				// sh "gcloud compute scp "			
+				sh "sudo -i"
+				sh "gcloud compute ssh --project training-freshers --zone us-central1-a aishwarya-jenkins-deployment"
 				echo " Test stage completed Successfully"
-				// sh " shell script"
 			}
 		}
 
