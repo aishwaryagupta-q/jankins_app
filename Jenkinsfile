@@ -68,6 +68,7 @@ pipeline {
 						pip3 install -r requirements.txt --user
 						export FLASK_APP=appl.py
 						python3 -m flask run
+						exit
 						'''
 				
 				echo " Test stage completed Successfully"
