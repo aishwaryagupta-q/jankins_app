@@ -59,8 +59,13 @@ pipeline {
 				sh "git clone https://github.com/aishwaryagupta-q/jankins_app.git"
 				sh	"python3 -m venv venv"
 				sh	". venv/bin/activate"
-				sh "ls -a"
-				sh "cd ./jankins_app"
+				sh script: '''
+						#!/bin/bash
+						ls -a
+						cd ./jankins_app
+						echo "this is $(pwd)
+						ls -a
+						'''
 				sh "pip3 install -r requirements.txt --user"
 				sh "export FLASK_APP=appl.py"
 				sh "flask run"
