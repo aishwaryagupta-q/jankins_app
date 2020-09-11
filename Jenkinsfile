@@ -68,15 +68,15 @@ pipeline {
 				sh "sudo -i"
 				sh "gcloud compute ssh --project training-freshers --zone us-central1-a aishwarya-jenkins-deployment"
 				sh "git clone https://github.com/aishwaryagupta-q/jankins_app.git"
-				sh	"python3 -m venv venv"
-				sh	". venv/bin/activate"
 				sh script: '''
 						#!/bin/bash
 						ls -a
 						cd ./jankins_app
 						echo "this is $(pwd)"
 						ls -a
-						pip3 install -r requirements.txt --user
+						/bin/python3 -m venv venv
+						. venv/bin/activate
+						/bin/pip3 install -r requirements.txt --user
 						/bin/python3 appl.py &
 						'''
 				
