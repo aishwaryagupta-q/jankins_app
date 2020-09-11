@@ -17,7 +17,10 @@ pipeline {
 	}
 	stages {
 		stage("clean"){
-			deleteDir()
+			steps{
+				deleteDir()
+				cleanWs()
+			}
 		}
 		stage("build"){
 			when{
