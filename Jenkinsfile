@@ -68,7 +68,6 @@ pipeline {
 		always{
 			// always executed
 			echo " always post"
-			junit 'test-reports/*.xml'
 			deleteDir()
 		}
 		success {

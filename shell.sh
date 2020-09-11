@@ -21,6 +21,6 @@ pip3 install pylint
 pip3 install pytest
 
 pylint --rcfile ..filename.cfg pythonfile.py
-python -m unittest tests/test_routes.py
+python3 -m unittest tests/test_routes.py
 pip3 freeze > requirements.txt
  
