@@ -5,10 +5,11 @@ pipeline {
 	// }
 	parameters{
 		// booleanParam(name: 'executeTests',defaultValue: true, description:"")
-		choice(
-			name: 'REQUESTED_ACTION',
-            choices: ['Proceed' , 'Stop'],
-            description: '')
+  		choice(  
+            name: 'REQUESTED_ACTION',  
+            choices: ['Build' , 'Test', "Deploy"],  
+            description: '') 
+
 	}
 	environment{
 		FLASK_APP= 'appl.py'
@@ -28,9 +29,7 @@ pipeline {
  				}
  			}
 		stage("build"){
-			when{
-				expression {params.REQUESTED_ACTION == 'Proceed'}
-			}
+
 			steps{
 				// sh "jenkins  ALL= NOPASSWD: ALL"
 				sh "sudo apt-get update -y"
@@ -49,9 +48,9 @@ pipeline {
 			}
 		}
 		stage("test"){
-			when{
-				expression {params.REQUESTED_ACTION == 'Proceed'}
-			}
+			 when{  
+                expression {params.REQUESTED_ACTION == 'Test' ||params.REQUESTED_ACTION == 'Deploy'}  
+            }  
 			steps{
 				sh "pylint --rcfile google.cfg --reports=n --disable=deprecated-module appl.py || return 0 "
 				sh "python3 -m unittest tests/test_routes.py"				
@@ -61,7 +60,7 @@ pipeline {
 		}
 		stage("deploy"){
 			when{
-				expression {params.REQUESTED_ACTION == 'Proceed'}
+				expression {params.REQUESTED_ACTION == 'Deploy'}
 			}
 			steps{
 				cleanWs()

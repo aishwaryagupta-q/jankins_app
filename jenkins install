@@ -1,0 +1,15 @@
+sudo apt update
+
+sudo apt install openjdk-8-jdk
+
+
+sudo gpg --keyserver  http://pkg.jenkins-ci.org/debian/jenkins-ci.org.key --recv-keys
+
+wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
+
+sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+sudo add-apt-repository universe
+#Update apt with the command sudo apt-get update
+sudo apt install jenkins -y
+
+systemclt start jenkins
