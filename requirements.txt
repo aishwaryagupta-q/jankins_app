@@ -1,27 +1,18 @@
 awscli==1.18.124
 curl==0.0.1
-distlib==0.3.1
-docutils==0.15.2
 filelock==3.0.12
 Flask-WTF==0.14.3
 gevent==20.6.2
-greenlet==0.4.16
 gunicorn==19.5.0
 isort==5.5.1
 itsdangerous==1.1.0
-Jinja2==2
-jmespath==0.10.0
 lazy-object-proxy==1.4.3
-pathtools==0.1.2
 pylint==2.6.0
 python-dotenv==0.14.0
 PyYAML==5.3.1
-urllib3==1.25.10
-virtualenv==20.0.31
 watchdog==0.10.3
 Werkzeug==0.16.1
 wrapt==1.12.1
-WTForms==2.3.3
 xmlrunner==1.7.7
 flask
 
