@@ -80,7 +80,7 @@ pipeline {
 						python3 appl.py &
 						'''
 				
-				echo " Test stage completed Successfully"
+				echo " Deploy stage completed Successfully"
 			}
 		}
 
