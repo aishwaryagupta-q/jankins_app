@@ -88,18 +88,23 @@ pipeline {
 
 
 	}
-	post{
-		always{
-			// always executed
-			echo " always post"
-		}
-		success {
-			echo "success post"
-		}
-		failure {
-			echo "failure post"
+	post{  
+        always{  
+            // always executed  
+            // cleanup  
+            deleteDir()  
+            cleanWs()  
+            echo "All Executed"  
+  
+        }  
+        success {  
+            echo " Successfully"  
+        }  
+        failure {  
+            echo " with failures in the pipeline"  
+  
+        }  
+  
+    }  
+} 
 
-		}
-
-	}
-}
